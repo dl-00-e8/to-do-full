@@ -1,2 +1,6 @@
 # to-do-full
-���θ���Ʈ
+
+투두리스트
+
+Front : React
+Back : Spring
