@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "todo")
@@ -23,13 +23,13 @@ public class Todo extends BaseTimeEntity {
     private String title;
 
     @Column(name = "started_at")
-    private LocalDateTime startTime;
+    private LocalDate startTime;
 
     @Column(name = "finished_at")
-    private LocalDateTime finishTime;
+    private LocalDate finishTime;
 
     @Builder
-    public Todo(String title, LocalDateTime startTime, LocalDateTime finishTime) {
+    public Todo(String title, LocalDate startTime, LocalDate finishTime) {
         this.title = title;
         this.startTime = startTime;
         this.finishTime = finishTime;
