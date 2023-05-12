@@ -1,12 +1,15 @@
 package com.todo.todo.controller;
 
 import com.todo.todo.dto.request.PostTodoReq;
+import com.todo.todo.dto.response.GetAllTodoRes;
 import com.todo.todo.entity.Todo;
 import com.todo.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("to-do")
@@ -38,8 +41,9 @@ public class TodoController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<String> getAllTodo() {
+    public ResponseEntity<List<GetAllTodoRes>> getAllTodo() {
+        List<GetAllTodoRes> getAllTodoResList = todoService.getAllTodo();
 
-        return ResponseEntity.ok("Post Success");
+        return ResponseEntity.ok(getAllTodoResList);
     }
 }
