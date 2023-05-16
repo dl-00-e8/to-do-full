@@ -1,6 +1,7 @@
 package com.todo.todo.entity;
 
 import com.todo.todo.constant.BaseTimeEntity;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Table(name = "todo")
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Todo extends BaseTimeEntity {
 
     @Id
